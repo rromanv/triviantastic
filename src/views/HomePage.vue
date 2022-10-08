@@ -1,14 +1,14 @@
 <script setup>
-import { onMounted, ref } from "vue";
-import useAPI from "@/composables/useAPI";
-import BaseTitle from "@/components/BaseTitle.vue";
+import { onMounted, ref } from 'vue'
+import useAPI from '@/composables/useAPI'
+import BaseTitle from '@/components/BaseTitle.vue'
 
-const api = useAPI();
-const categories = ref([]);
+const api = useAPI()
+const categories = ref([])
 
 onMounted(async () => {
-  categories.value = await api.getCategories();
-});
+  categories.value = await api.getCategories()
+})
 </script>
 
 <template>
