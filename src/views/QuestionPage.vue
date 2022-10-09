@@ -51,12 +51,10 @@ onMounted(async () => {
 <template>
   <div v-if="question" class="question-container">
     <BaseTitle> {{ question.category }}</BaseTitle>
-    <p class="question">{{ question.question }}</p>
+    <p class="question" v-html="question.question" />
     <div class="answers">
       <div v-for="answer in answers" :key="answer.id" :class="colors.getColor(answer.id)" class="answer"
-        @click="handleAnswer(answer.points)">
-        {{ answer.answer }}
-      </div>
+        @click="handleAnswer(answer.points)" v-html="answer.answer" />
     </div>
     <DifficultyChip :difficulty="question.difficulty" />
   </div>
